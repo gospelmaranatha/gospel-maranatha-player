@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio Gospel Maranatha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- LunaRadio -->
+  <script src="https://dl.dropboxusercontent.com/s/ai2ny5smsk07k7m/lunaradio.min.js?dl=0"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Saira Condensed', sans-serif;
+      background-image: url('https://i.ibb.co/yF10FrwP/luces-neon-gradiente-abstracto-23-2149279178.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #lunaradio {
+      width: 100%;
+      max-width: 600px;
+      height: 550px;
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+      background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para legibilidad */
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎧 Radio Gospel Maranatha</h1>
+  <div id="lunaradio">Cargando reproductor...</div>
+
+  <script>
+    $("#lunaradio").lunaradio({
+      userinterface: "big",
+      backgroundcolor: "rgba(0,0,0,0.7)",
+      fontcolor: "#FFFFFF",
+      hightlightcolor: "#FF0000",
+      fontname: "Saira Condensed",
+      googlefont: "Saira+Condensed:wght@600",
+      fontratio: "0.4",
+      radioname: "Radio Gospel Maranatha",
+      scroll: "true",
+      coverimage: "https://i.ibb.co/qLHDhvMn/splash-maranatha.png",
+      usevisualizer: "fake",
+      visualizertype: "6",
+      multicolorvisualizer: "true",
+      color1: "#00aaff",
+      color2: "#0077cc",
+      color3: "#00ffff",
+      color4: "#66ccff",
+      streamurl: "https://stream.zeno.fm/2nmlylldjrytv",
+      streamtype: "radiozeno",
+      radiozenoid: "utztqpdbt0hvv",
+      metadatatechnic: "corsproxy",
+      corsproxy: "https://corsradio.herokuapp.com/index.php?q=",
+      metadatainterval: "20000",
+      volume: "95",
+      autoplay: "true"
+    });
+
+    const aplicarAnimacionLogo = () => {
+      const logo = $("#lunaradio img.cover");
+      if (logo.length) {
+        logo.css({
+          "animation": "pulse 2s infinite",
+          "transform-origin": "center center"
+        });
+      } else {
+        setTimeout(aplicarAnimacionLogo, 500);
+      }
+    };
+
+    aplicarAnimacionLogo();
+  </script>
+
+</body>
+</html>
