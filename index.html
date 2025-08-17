@@ -4,94 +4,194 @@
   <meta charset="UTF-8">
   <title>Radio Gospel Maranatha</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&display=swap" rel="stylesheet">
-  <!-- jQuery -->
+  <meta name="description" content="Radio Gospel Maranatha - Transmitiendo fe, esperanza y vida desde Iglesia Jesus es el Nombre.">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- LunaRadio -->
   <script src="https://dl.dropboxusercontent.com/s/ai2ny5smsk07k7m/lunaradio.min.js?dl=0"></script>
+
   <style>
     body {
       margin: 0;
-      font-family: 'Saira Condensed', sans-serif;
-      background-image: url('https://i.ibb.co/yF10FrwP/luces-neon-gradiente-abstracto-23-2149279178.jpg');
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('https://i.ibb.co/7NC2gxZY/formas-geometricas-gradientes-diseno-fondo-oscuro-23-2148433740.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: darken;
       color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      position: relative;
+    }
+
+    h1.titulo-palpita {
+      margin-top: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      color: white;
+      text-shadow: 0 0 6px #00aaff, 0 0 12px #00aaff;
+      animation: latido 1.8s infinite;
+      padding: 8px 20px;
+    }
+
+    .social-bar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-end;
+      z-index: 1000;
+    }
+
+    .social-bar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .social-bar img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
     }
 
     #lunaradio {
       width: 100%;
       max-width: 600px;
       height: 550px;
-      margin-top: 20px;
+      margin-top: 80px;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
-      background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para legibilidad */
+      background-color: transparent;
+    }
+
+    .subtitulo {
+      margin-top: 60px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      text-shadow: 0 0 6px #00aaff;
+      animation: resplandor 1.8s infinite;
+    }
+
+    @keyframes latido {
+      0% { transform: scale(1); text-shadow: 0 0 6px #00aaff; }
+      50% { transform: scale(1.1); text-shadow: 0 0 12px #00ccff; }
+      100% { transform: scale(1); text-shadow: 0 0 6px #00aaff; }
+    }
+
+    @keyframes resplandor {
+      0%   { text-shadow: 0 0 6px #00aaff; }
+      50%  { text-shadow: 0 0 12px #00ccff; }
+      100% { text-shadow: 0 0 6px #00aaff; }
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+      50% { transform: scale(1.25); box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); }
+      100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    }
+
+    @media (max-width: 480px) {
+      h1.titulo-palpita {
+        font-size: 1.6rem;
+        padding: 6px 14px;
+      }
+
+      .social-bar {
+        top: 15px;
+        right: 15px;
+        gap: 14px;
+      }
+
+      .social-bar img {
+        width: 44px;
+        height: 44px;
+      }
+
+      #lunaradio {
+        height: 500px;
+        margin-top: 70px;
+      }
+
+      .subtitulo {
+        margin-top: 50px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="social-bar">
+    <a href="https://wa.me/5492216076783" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Contáctanos por WhatsApp">
+      <img src="https://i.ibb.co/Fk5X1pxJ/whatsapp-logo-11.png" alt="WhatsApp - Contacto directo">
+    </a>
+    <a href="https://www.facebook.com/omar.brest.ijn?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Únete a nuestra comunidad en Facebook">
+      <img src="https://i.ibb.co/d0x8STkK/png-transparent-facebook-flat-social-media-icons-set-round-style-icon.png" alt="Facebook - Comunidad">
+    </a>
+  </div>
 
-  <h1>🎧 Radio Gospel Maranatha</h1>
+  <h1 class="titulo-palpita">Radio Gospel Maranatha</h1>
+
   <div id="lunaradio">Cargando reproductor...</div>
 
+  <p class="subtitulo">Iglesia Jesus es el Nombre</p>
+
   <script>
-    $("#lunaradio").lunaradio({
-      userinterface: "big",
-      backgroundcolor: "rgba(0,0,0,0.7)",
-      fontcolor: "#FFFFFF",
-      hightlightcolor: "#FF0000",
-      fontname: "Saira Condensed",
-      googlefont: "Saira+Condensed:wght@600",
-      fontratio: "0.4",
-      radioname: "Radio Gospel Maranatha",
-      scroll: "true",
-      coverimage: "https://i.ibb.co/qLHDhvMn/splash-maranatha.png",
-      usevisualizer: "fake",
-      visualizertype: "6",
-      multicolorvisualizer: "true",
-      color1: "#00aaff",
-      color2: "#0077cc",
-      color3: "#00ffff",
-      color4: "#66ccff",
-      streamurl: "https://stream.zeno.fm/2nmlylldjrytv",
-      streamtype: "radiozeno",
-      radiozenoid: "utztqpdbt0hvv",
-      metadatatechnic: "corsproxy",
-      corsproxy: "https://corsradio.herokuapp.com/index.php?q=",
-      metadatainterval: "20000",
-      volume: "95",
-      autoplay: "true"
+    $(document).ready(function() {
+      $("#lunaradio").lunaradio({
+        userinterface: "big",
+        backgroundcolor: "rgba(0,0,0,0.0)",
+        fontcolor: "#FFFFFF",
+        hightlightcolor: "#FF0000",
+        fontname: "Montserrat",
+        googlefont: "Montserrat:wght@600",
+        fontratio: "0.4",
+        scroll: "true",
+        coverimage: "https://i.ibb.co/qLHDhvMn/splash-maranatha.png",
+        onlycoverimage: true,
+        usevisualizer: "fake",
+        visualizertype: "6",
+        multicolorvisualizer: "true",
+        color1: "#ff00cc",
+        color2: "#00ffff",
+        color3: "#00ff00",
+        color4: "#ffff00",
+        streamurl: "https://stream.zeno.fm/2nmlylldjrytv",
+        streamtype: "radiozeno",
+        radiozenoid: "utztqpdbt0hvv",
+        metadatatechnic: "none",
+        metadatainterval: "20000",
+        volume: "95",
+        autoplay: "true"
+      });
+
+      const aplicarAnimacionLogo = () => {
+        const logo = $("#lunaradio img.cover");
+        if (logo.length) {
+          logo.css({
+            "animation": "pulse 1.5s infinite",
+            "transform-origin": "center center"
+          });
+        } else {
+          setTimeout(aplicarAnimacionLogo, 500);
+        }
+      };
+      aplicarAnimacionLogo();
     });
-
-    const aplicarAnimacionLogo = () => {
-      const logo = $("#lunaradio img.cover");
-      if (logo.length) {
-        logo.css({
-          "animation": "pulse 2s infinite",
-          "transform-origin": "center center"
-        });
-      } else {
-        setTimeout(aplicarAnimacionLogo, 500);
-      }
-    };
-
-    aplicarAnimacionLogo();
   </script>
-
 </body>
 </html>
